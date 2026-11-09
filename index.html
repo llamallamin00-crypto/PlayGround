@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#090d12">
+  <title>Medianoche: Drift City</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="Juego de carreras y derrapes"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Medianoche Drift City"><span class="brand-mark">M</span><span>MEDIANOCHE <b>DRIFT CITY</b></span></a>
+      <div class="top-meta"><span class="live-dot"></span> CIRCUITO URBANO <i>•</i> TOKIO, 02:17 AM</div>
+      <button id="soundBtn" class="icon-btn" aria-label="Activar o desactivar sonido">♫ <span>SONIDO</span></button>
+    </header>
+
+    <section id="menu" class="menu-screen">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> NOCHE DE CARRERAS · TEMPORADA 01</p>
+        <h1>DOMINA<br>LA <em>NOCHE.</em></h1>
+        <p class="intro">Asfalto caliente. Neón en el retrovisor.<br>Deja tu firma en cada curva.</p>
+        <button id="startBtn" class="primary-btn">ENTRAR AL CIRCUITO <span>↗</span></button>
+        <div class="best-record"><span>★</span> RÉCORD PERSONAL <b id="bestScore">0 PTS</b></div>
+      </div>
+      <div class="garage-panel">
+        <div class="section-heading"><div><p class="eyebrow">TU MÁQUINA</p><h2>ELIGE TU COCHE</h2></div><span class="garage-index">01 <i>/</i> 04</span></div>
+        <div id="carList" class="car-list"></div>
+        <div class="car-specs"><div><span>POTENCIA</span><div class="meter"><i id="powerMeter"></i></div></div><div><span>AGARRE</span><div class="meter"><i id="gripMeter"></i></div></div><div><span>DERAPE</span><div class="meter"><i id="driftMeter"></i></div></div></div>
+        <p class="garage-note">COCHES INSPIRADOS EN LEYENDAS DE LA CALLE</p>
+      </div>
+      <div class="menu-footer"><span>01 / CIRCUITO NEÓN</span><span>LA CIUDAD ES TUYA <b>→</b></span></div>
+    </section>
+
+    <section id="hud" class="hud hidden">
+      <div class="hud-left"><div class="race-tag"><span class="live-dot"></span> VUELTA LIBRE <i>•</i> 90 SEG</div><div class="score-label">PUNTUACIÓN</div><div id="score" class="score">000000</div><div id="combo" class="combo">x1.0 <span>COMBO</span></div></div>
+      <div class="hud-center"><div id="toast" class="toast"></div></div>
+      <div class="hud-right"><div class="timer-label">TIEMPO RESTANTE</div><div id="timer" class="timer">01:30</div><div class="speed-wrap"><span id="speed">000</span><small>KM/H</small><div class="speed-track"><i id="speedBar"></i></div></div></div>
+      <button id="pauseBtn" class="pause-btn" aria-label="Pausa">Ⅱ</button>
+      <div class="bottom-hint"><span>WASD / FLECHAS</span> ACELERAR · GIRAR · DERRAPAR <b>SHIFT</b></div>
+      <div class="touch-controls"><button data-control="left">◀</button><button data-control="right">▶</button><button data-control="brake">▼</button><button data-control="gas">▲</button></div>
+    </section>
+
+    <section id="result" class="result-screen hidden"><div class="result-card"><p class="eyebrow">SE APAGAN LOS MOTORES</p><h2 id="resultTitle">NOCHE<br><em>DE LEYENDA.</em></h2><p class="result-caption">PUNTUACIÓN FINAL</p><div id="finalScore" class="final-score">000000</div><div class="result-stats"><span>MEJOR COMBO <b id="finalCombo">x1.0</b></span><span>RÉCORD <b id="recordStat">000000</b></span></div><button id="againBtn" class="primary-btn">VOLVER A CORRER <span>↗</span></button><button id="garageBtn" class="text-btn">CAMBIAR DE COCHE</button></div></section>
+
+    <div id="pauseOverlay" class="pause-overlay hidden"><div><p class="eyebrow">EL RELOJ SE DETUVO</p><h2>PAUSA</h2><button id="resumeBtn" class="primary-btn">SEGUIR DERRAPANDO <span>↗</span></button><button id="quitBtn" class="text-btn">SALIR AL GARAJE</button></div></div>
+    <div class="screen-grain"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
