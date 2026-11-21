@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Velocity Arena</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#09131f;font-family:Arial,sans-serif;touch-action:none}canvas{display:block;width:100%;height:100%}.hud{position:fixed;inset:0;pointer-events:none;color:white}.score{position:absolute;top:3%;left:50%;transform:translateX(-50%);display:flex;gap:28px;font-weight:900;font-size:34px;text-shadow:0 3px 10px #000}.score b{color:#ffb22d}.score i{font-size:15px;color:#fff;font-style:normal}.clock{position:absolute;top:9%;left:50%;transform:translateX(-50%);font-size:18px}.boost{position:absolute;left:3%;bottom:5%;width:190px}.boost label{font-size:12px;font-weight:bold}.bar{height:10px;background:#222;border:2px solid #fff;border-radius:10px;margin-top:5px;overflow:hidden}.fill{height:100%;width:100%;background:linear-gradient(90deg,#ff5d2d,#ffd12b);transition:width .1s}.objective{position:absolute;top:15%;left:50%;transform:translateX(-50%);font-size:13px;opacity:.85}.touch{display:none}.controls{position:absolute;bottom:2%;right:2%;font-size:11px;opacity:.7}.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,rgba(5,12,28,.65),rgba(5,12,28,.1));pointer-events:auto}.panel{width:min(440px,80vw);padding:28px;text-align:center;background:rgba(8,20,38,.78);border:1px solid rgba(255,255,255,.18);border-radius:18px;box-shadow:0 20px 60px #000;backdrop-filter:blur(12px)}.panel h1{margin:0;font-size:48px;letter-spacing:2px}.panel h1 span{color:#ffb22d}.panel p{color:#b9c8db}.panel button{border:0;border-radius:999px;background:linear-gradient(135deg,#ffb22d,#ff6a21);color:#fff;font-size:17px;font-weight:900;padding:14px 34px;cursor:pointer;box-shadow:0 8px 30px rgba(255,106,33,.35)}.hidden{display:none}@media(max-width:700px){.controls{display:none}.touch{display:block}.tleft{position:absolute;left:4%;bottom:5%;width:118px;height:118px;border:1px solid rgba(255,255,255,.25);border-radius:50%;pointer-events:auto}.tleft:after{content:'';position:absolute;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);left:37px;top:37px}.ta{position:absolute;right:4%;bottom:6%;width:78px;height:78px;border-radius:50%;border:2px solid rgba(255,255,255,.45);background:rgba(255,106,33,.28);color:white;font-weight:bold;pointer-events:auto}.score{font-size:26px}.boost{width:120px}}
+</style>
+</head>
+<body>
+<canvas id="game"></canvas>
+<div class="hud">
+<div class="score"><span id="blue">0</span><i>BLUE  —  ORANGE</i><span id="orange" style="color:#ff7b2d">0</span></div>
+<div class="clock" id="clock">3:00</div>
+<div class="objective">BREAK THE DEFENSE</div>
+<div class="boost"><label>BOOST</label><div class="bar"><div class="fill" id="boostFill"></div></div></div>
+<div class="controls">WASD / ARROWS · DRIVE &nbsp; SPACE · BOOST &nbsp; SHIFT · DRIFT &nbsp; R · RESET</div>
+<div class="touch"><div class="tleft" id="stick"></div><button class="ta" id="boostBtn">BOOST</button></div>
+<div class="overlay" id="overlay"><div class="panel"><h1>VELOCITY <span>ARENA</span></h1><p>Score goals, reclaim the ball, and dominate the arena.</p><button id="play">START MATCH</button></div></div>
+</div>
+<script src="game.js"></script>
+</body></html>
